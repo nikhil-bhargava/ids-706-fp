@@ -7,7 +7,7 @@
 /results/**
 
 # include only .gitkeep files
-!/data/*.gitkeep
+!/data/**/*.gitkeep
 
 # also keep all .gitkeep files
 !.gitkeep
