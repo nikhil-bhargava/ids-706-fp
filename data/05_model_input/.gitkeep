@@ -1,0 +1,15 @@
+##########################
+# IDS 706 FINAL PROJECT
+
+# exclude everything in every folder
+/data/**/*.*
+/conf/**
+/results/**
+
+# include only .gitkeep files
+!/data/**/*.gitkeep
+
+# also keep all .gitkeep files
+!.gitkeep
+
+##########################
