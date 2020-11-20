@@ -18,8 +18,8 @@ test['wmns'] = test['wmns'].astype('int')
 test['collab'] = test['collab'].astype('int')
 test['retro'] = test['retro'].astype('int')
 test['kids'] = test['kids'].astype('int')
-test['log_resale'] = np.log(train['resale_price'])
-test['log_retail'] = np.log(train['retail_price'])
+test['log_resale'] = np.log(test['resale_price'])
+test['log_retail'] = np.log(test['retail_price'])
 test['retail_price'] = test['retail_price'].astype('int')
 
 # get labels for test set

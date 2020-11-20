@@ -5,6 +5,7 @@
 /data/**/*.*
 /conf/**
 /results/**
+/env/**
 
 # include only .gitkeep files
 !/data/**/*.gitkeep
@@ -13,3 +14,7 @@
 !.gitkeep
 
 ##########################
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

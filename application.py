@@ -15,4 +15,5 @@ def sneaker_table():
     # return render_template("resale_template2.html", column_names=df.columns.values, row_data=list(df.values.tolist()),link_column="Style Code", zip=zip)
 
 if __name__ == '__main__':
+    # app.run(host='0.0.0.0', port=8080)
     app.run()
