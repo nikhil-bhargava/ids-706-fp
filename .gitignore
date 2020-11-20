@@ -6,10 +6,10 @@ data/**
 results/**
 
 # except their sub-folders
-!data/*/
+!data/**/
 !results/**/
 
-# keep all .gitkeep files
+# also keep all .gitkeep files
 !.gitkeep
 
 ##########################
