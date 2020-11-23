@@ -1,41 +1,44 @@
-from flask import Flask, request, render_template, session, redirect, flash, url_for
-from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, SubmitField, BooleanField, SelectField 
-from wtforms.validators import DataRequired
-import os
-from pathlib import Path
-import pandas as pd
-import numpy as np
-from statsmodels.iolib.smpickle import load_pickle
-import statsmodels.formula.api as smf
+from flask import Flask, request, render_template, redirect, url_for
+# from flask import Flask, request, render_template, session, redirect, flash, url_for
+#from flask_wtf import FlaskForm
+#from wtforms import StringField, IntegerField, SubmitField, BooleanField, SelectField 
+#from wtforms.validators import DataRequired
+# import os
+# from pathlib import Path
+# import pandas as pd
+# import numpy as np
+# from statsmodels.iolib.smpickle import load_pickle
+# import statsmodels.formula.api as smf
 
 app = Flask(__name__)
 # app.config['SECRET_KEY'] = 'any secret string'
 
 
-RESALE_HTML = """{% extends "login.html" %}
-        <html>
-            <body>
-                {0}'s resale value is predicted to be ${1}.
-            </body>
-        </html>
-    """
+# RESALE_HTML = """{% extends "login.html" %}
+#         <html>
+#             <body>
+#                 {0}'s resale value is predicted to be ${1}.
+#             </body>
+#         </html>
+#     """
 
-repo_path = Path(os.getcwd())
+# repo_path = Path(os.getcwd())
 
-class model_input(FlaskForm):
-    sneaker_name = StringField('Sneaker Name', validators=[DataRequired()])
-    brand = SelectField('Brand Name', validators=[DataRequired()], choices=[('1', 'Adidas'), ('2', 'Air Jordan'), ('3', 'Asics'), ('4', 'Converse'), ('5', 'Jordan Brand'), ('6', 'New Balance'), ('7', 'Nike'), ('8', 'Nike Basketball'), ('9', 'Nike Running'), ('10', 'Other Brands'), ('11', 'Puma'), ('12', 'Reebok')])
-    retail_price = IntegerField('Retail Price', validators=[DataRequired()])
-    release_day = SelectField('Release Day', validators=[DataRequired()], choices=[('1', 'Sunday'), ('2', 'Monday'), ('3', 'Tuesday'), ('4', 'Wednesday'), ('5', 'Thursday'), ('6', 'Friday'), ('7', 'Saturday')])
-    release_month = SelectField('Release Month', validators=[DataRequired()], choices=[('1', 'Jan'), ('2', 'Feb') , ('3', 'Mar'), ('4', 'Apr'), ('5', 'May'), ('6', 'Jun'), ('7', 'Jul'), ('8', 'Aug') , ('9', 'Sep'), ('10', 'Oct'), ('11', 'Nov'), ('12', 'Dec')])
-    collab = BooleanField('Collab')
-    retro = BooleanField('Retro')
-    wmns = BooleanField('Wmns')
-    kids = BooleanField('Kids')
-    submit =  SubmitField('Submit')
+# class model_input(FlaskForm):
+#     sneaker_name = StringField('Sneaker Name', validators=[DataRequired()])
+#     brand = SelectField('Brand Name', validators=[DataRequired()], choices=[('1', 'Adidas'), ('2', 'Air Jordan'), ('3', 'Asics'), ('4', 'Converse'), ('5', 'Jordan Brand'), ('6', 'New Balance'), ('7', 'Nike'), ('8', 'Nike Basketball'), ('9', 'Nike Running'), ('10', 'Other Brands'), ('11', 'Puma'), ('12', 'Reebok')])
+#     retail_price = IntegerField('Retail Price', validators=[DataRequired()])
+#     release_day = SelectField('Release Day', validators=[DataRequired()], choices=[('1', 'Sunday'), ('2', 'Monday'), ('3', 'Tuesday'), ('4', 'Wednesday'), ('5', 'Thursday'), ('6', 'Friday'), ('7', 'Saturday')])
+#     release_month = SelectField('Release Month', validators=[DataRequired()], choices=[('1', 'Jan'), ('2', 'Feb') , ('3', 'Mar'), ('4', 'Apr'), ('5', 'May'), ('6', 'Jun'), ('7', 'Jul'), ('8', 'Aug') , ('9', 'Sep'), ('10', 'Oct'), ('11', 'Nov'), ('12', 'Dec')])
+#     collab = BooleanField('Collab')
+#     retro = BooleanField('Retro')
+#     wmns = BooleanField('Wmns')
+#     kids = BooleanField('Kids')
+#     submit =  SubmitField('Submit')
 
 @app.route('/')
+def home():
+    return redirect(url_for('ResalePredictor'))
 
 @app.route('/ResalePredictor')
 def ResalePredictor():
