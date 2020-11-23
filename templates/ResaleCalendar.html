@@ -1,0 +1,9 @@
+<html>
+<body>
+<h1>Sole Collector Resale Calendar ({{current_month}})</h1>
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+</body>
+</html>

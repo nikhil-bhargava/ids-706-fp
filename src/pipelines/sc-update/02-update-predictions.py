@@ -37,6 +37,8 @@ output = output.sort_values(by='date')
 opath = dpath / ".." / ".." / "data" / "07_model_output"
 output.to_csv(opath / 'output.csv', index=False)
 
+output.to_csv(mpath / 'output.csv', index=False)
+
 
 
 
