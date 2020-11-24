@@ -11,11 +11,11 @@ According to GQ, the sneaker resale market is valued at around $2 billion dollar
 ![images 002](https://user-images.githubusercontent.com/31523376/100054202-9e3a8100-2def-11eb-8bc4-174126e7405c.jpeg)
 
 ## Project Outline & Cloud Architecture
-The model was trained on data scraped from Sole Collector and StockX. Additional scrapers can also be found in the notebooks section of this repo.
+The model was trained on data scraped from Sole Collector and StockX. Additional scrapers can also be found in the notebooks section of this repo. The Flask app is running in continous delivery in the back end thanks to Github and Google cloud build. The training data is stored in Google Cloud Storage, but since other files were relatively small, they were also stored locally. The Flask app was deployed using Google App Engine.
 ![images 003](https://user-images.githubusercontent.com/31523376/100053751-aba33b80-2dee-11eb-8085-e047e6092932.jpeg)
 
 ## Entity Relation Diagram (Solecollector x StockX Data)
-The data scraped was merged together to creating a training set for the model. The relationships from the five tables are visualized below.
+Five data tables were scraped and joined together form Sole Collector and StockX. The star by each variable name indicate features used to train the model. The blue s were variables directly input into the model, the pink stars were variables that features were extracted from, and the yellow star is the response variable. The relationships between the five tables are visualized below.
 ![images 004](https://user-images.githubusercontent.com/31523376/100053908-02107a00-2def-11eb-8816-97ccf23fbfb4.jpeg)
 
 ## Getting Started
