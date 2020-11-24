@@ -33,7 +33,7 @@ def ResaleCalendar():
     today = datetime.today()
     current_month = month[today.month]
 
-    df = pd.read_csv(repo_path / 'data' / '07_model_output' / 'output.csv')
+    df = pd.read_csv(repo_path / 'prod-models' / 'output.csv')
     df = df.rename(columns={'style_code':'Style Code', 'name': 'Sneaker Name', 'date':'Date', 
                             'retail_price':'Retail', 'pred_resale_price':'Predicted Resale'})
 
