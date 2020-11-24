@@ -10,3 +10,5 @@ steps:
   - '.'
   - '-r'
   - 'requirements.txt'
+
+timeout: "1600s"
