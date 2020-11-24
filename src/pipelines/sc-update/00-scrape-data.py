@@ -98,7 +98,7 @@ try:
 except:
     pass
 
-source_soup = BeautifulSoup(source)
+source_soup = BeautifulSoup(source, features="html.parser")
 monthly_sneakers = source_soup.find_all('div', class_='col-xs-12 col-sm-6') 
 
 # loop over sneaker source page
@@ -108,7 +108,7 @@ for index, sneaker in enumerate(monthly_sneakers):
 
     sneaker_url = solecollector_com + monthly_sneakers[index].a['href']
     sneaker_html = requests.get(sneaker_url).text
-    sneaker_soup = BeautifulSoup(sneaker_html)
+    sneaker_soup = BeautifulSoup(sneaker_html, features="html.parser")
 
     try:
         sneaker_script = str(sneaker_soup.find_all('script', type="text/javascript")[2])
@@ -119,38 +119,26 @@ for index, sneaker in enumerate(monthly_sneakers):
 # directory to save data
 cur_dir = os.getcwd()
 data = Path(cur_dir)
-data = data / ".." / ".." / "data" / "01_raw"/ "update"
+data = data / "data" / "01_raw"/ "update"
 
 # save data
-with open(data / 'sneaker.json', 'w') as outfile:
-    json.dump(sneaker_json, outfile)
-
 sneaker_df = pd.DataFrame(sneaker_json)
 sneaker_df = sneaker_df.sort_values(by='release_date', ascending=False)
 sneaker_df = sneaker_df.drop_duplicates(subset=['id'])
 sneaker_df = sneaker_df.drop_duplicates(subset=['style_code'])
 sneaker_df.to_csv(data / 'sneaker.csv', index=False)
 
-with open(data / 'brand.json', 'w') as outfile:
-    json.dump(brand_json, outfile)
-
 brand_df = pd.DataFrame(brand_json)
 brand_df = brand_df.sort_values(by='id', ascending=True)
 brand_df = brand_df.drop_duplicates(subset=['id'])
 brand_df.to_csv(data / 'brand.csv', index=False)
-
-with open(data / 'secondary_brand.json', 'w') as outfile:
-    json.dump(secondary_brand_json, outfile)
 
 secondary_brand_df = pd.DataFrame(secondary_brand_json)
 secondary_brand_df = secondary_brand_df.sort_values(by='id', ascending=True)
 secondary_brand_df = secondary_brand_df.drop_duplicates(subset=['id'])
 secondary_brand_df.to_csv(data / 'secondary_brand.csv', index=False)
 
-with open(data / 'silhouette.json', 'w') as outfile:
-    json.dump(silhouette_json, outfile)
-
 silhouette_df = pd.DataFrame(silhouette_json)
 silhouette_df = silhouette_df.sort_values(by='id', ascending=True)
-silhouette_df = silhouette_df.sort_values(by='id', ascending=True)
+silhouette_df = silhouette_df.drop_duplicates(subset=['id'])
 silhouette_df.to_csv(data / 'silhouette.csv', index=False)

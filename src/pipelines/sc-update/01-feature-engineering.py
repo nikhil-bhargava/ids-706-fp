@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 
 # create path
-update = Path(os.getcwd()) / '..' / '..'/ 'data' / '01_raw' / 'update'
+update = Path(os.getcwd()) / 'data' / '01_raw' / 'update'
 sneaker = pd.read_csv(update / 'sneaker.csv')
 
 # select data
@@ -44,6 +44,6 @@ brand = brand[['brand_id', 'brand']]
 sneaker = sneaker.merge(brand, how='left', on='brand_id')
 
 # output final dataset as test.csv
-inter_update = Path(os.getcwd()) / '..' / '..'/ 'data' / '02_intermediate'
+inter_update = Path(os.getcwd()) / 'data' / '02_intermediate'
 sneaker.to_csv(inter_update / 'test.csv', index=False)
 
