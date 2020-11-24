@@ -6,7 +6,7 @@ According to GQ, the sneaker resale market is valued at around $2 billion dollar
 
 **FLASK APPLICATION LINK:** https://sneakairs.uc.r.appspot.com/
 
-**VIDEO INTRODUCTION & DEMO:** https://youtu.be/txatK3drnxo
+**VIDEO INTRODUCTION & DEMO:** https://youtu.be/XZZRA7Ox6hE
 
 ![images 002](https://user-images.githubusercontent.com/31523376/100054202-9e3a8100-2def-11eb-8bc4-174126e7405c.jpeg)
 
