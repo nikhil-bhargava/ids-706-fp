@@ -19,6 +19,8 @@ Five data tables were scraped and joined together form Sole Collector and StockX
 ![images 004](https://user-images.githubusercontent.com/31523376/100053908-02107a00-2def-11eb-8816-97ccf23fbfb4.jpeg)
 
 ## Getting Started
+If you would like to run the flask app locally, run the commands below.
+
 **Step 1: Clone the repo.**
 ```
 git clone https://github.com/nikhil-bhargava/ids-706-fp.git
