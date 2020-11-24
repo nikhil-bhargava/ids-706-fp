@@ -2,7 +2,9 @@
 ![images 001](https://user-images.githubusercontent.com/31523376/100053226-94b01980-2ded-11eb-996f-23a5b92cbd7c.jpeg)
 
 ## Introduction
-According to GQ, the sneaker resale market is valued at around $2 billion dollars, with the potential to reach $6 billion by 2025. Although sneaker prices vary over time, previous analysis done by StockX suggests that resale prices begin to plateau after a “month or two”. The purpose of this project is to deploy a sneaker resale price prediction model through the use of a Flask app. The app has been deployed on Google App Engine (GCP) and through continous delivery using Google Cloud Build. **FLASK APPLICATION LINK:** https://sneakairs.uc.r.appspot.com/
+According to GQ, the sneaker resale market is valued at around $2 billion dollars, with the potential to reach $6 billion by 2025. Although sneaker prices vary over time, previous analysis done by StockX suggests that resale prices begin to plateau after a “month or two”. The purpose of this project is to deploy a sneaker resale price prediction model through the use of a Flask app. The app has been deployed on Google App Engine (GCP) and through continous delivery using Google Cloud Build. 
+**FLASK APPLICATION LINK:** https://sneakairs.uc.r.appspot.com/
+**VIDEO INTRODUCTION & DEMO:** https://youtu.be/txatK3drnxo
 
 ![images 002](https://user-images.githubusercontent.com/31523376/100054202-9e3a8100-2def-11eb-8bc4-174126e7405c.jpeg)
 
